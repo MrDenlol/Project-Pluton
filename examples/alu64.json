@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "name": "АЛУ · 64 бита",
+  "nodes": [
+    {
+      "id": 1,
+      "label": "A",
+      "kind": "Input",
+      "width": 64,
+      "value": 42,
+      "position": [
+        40.0,
+        80.0
+      ]
+    },
+    {
+      "id": 2,
+      "label": "B",
+      "kind": "Input",
+      "width": 64,
+      "value": 7,
+      "position": [
+        40.0,
+        270.0
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Операция 0…3",
+      "kind": "Input",
+      "width": 2,
+      "value": 0,
+      "position": [
+        330.0,
+        700.0
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Выбор операции",
+      "kind": "Mux4",
+      "width": 64,
+      "value": 0,
+      "position": [
+        640.0,
+        180.0
+      ]
+    },
+    {
+      "id": 5,
+      "label": "ADD +",
+      "kind": "Add",
+      "width": 64,
+      "value": 0,
+      "position": [
+        330.0,
+        30.0
+      ]
+    },
+    {
+      "id": 6,
+      "label": "SUB −",
+      "kind": "Sub",
+      "width": 64,
+      "value": 0,
+      "position": [
+        330.0,
+        195.0
+      ]
+    },
+    {
+      "id": 7,
+      "label": "MUL ×",
+      "kind": "Mul",
+      "width": 64,
+      "value": 0,
+      "position": [
+        330.0,
+        360.0
+      ]
+    },
+    {
+      "id": 8,
+      "label": "DIV ÷",
+      "kind": "Div",
+      "width": 64,
+      "value": 0,
+      "position": [
+        330.0,
+        525.0
+      ]
+    },
+    {
+      "id": 9,
+      "label": "Остаток A % B",
+      "kind": "Output",
+      "width": 64,
+      "value": 0,
+      "position": [
+        640.0,
+        540.0
+      ]
+    },
+    {
+      "id": 10,
+      "label": "Результат",
+      "kind": "Output",
+      "width": 64,
+      "value": 0,
+      "position": [
+        930.0,
+        180.0
+      ]
+    }
+  ],
+  "wires": [
+    {
+      "from": {
+        "node": 1,
+        "pin": 0
+      },
+      "to": {
+        "node": 5,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 2,
+        "pin": 0
+      },
+      "to": {
+        "node": 5,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 5,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 1,
+        "pin": 0
+      },
+      "to": {
+        "node": 6,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 2,
+        "pin": 0
+      },
+      "to": {
+        "node": 6,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 6,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 1,
+        "pin": 0
+      },
+      "to": {
+        "node": 7,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 2,
+        "pin": 0
+      },
+      "to": {
+        "node": 7,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 7,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 2
+      }
+    },
+    {
+      "from": {
+        "node": 1,
+        "pin": 0
+      },
+      "to": {
+        "node": 8,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 2,
+        "pin": 0
+      },
+      "to": {
+        "node": 8,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 8,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 3
+      }
+    },
+    {
+      "from": {
+        "node": 8,
+        "pin": 1
+      },
+      "to": {
+        "node": 9,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 3,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 4
+      }
+    },
+    {
+      "from": {
+        "node": 4,
+        "pin": 0
+      },
+      "to": {
+        "node": 10,
+        "pin": 0
+      }
+    }
+  ]
+}

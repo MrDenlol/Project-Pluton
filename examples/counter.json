@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "name": "Счётчик · регистр + сумматор",
+  "nodes": [
+    {
+      "id": 1,
+      "label": "+1",
+      "kind": "Input",
+      "width": 8,
+      "value": 1,
+      "position": [
+        20.0,
+        220.0
+      ]
+    },
+    {
+      "id": 2,
+      "label": "CLK",
+      "kind": "Clock",
+      "width": 1,
+      "value": 0,
+      "position": [
+        310.0,
+        250.0
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Инкремент",
+      "kind": "Add",
+      "width": 8,
+      "value": 0,
+      "position": [
+        310.0,
+        20.0
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Регистр 8 бит",
+      "kind": "Dff",
+      "width": 8,
+      "value": 0,
+      "position": [
+        590.0,
+        20.0
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Счётчик",
+      "kind": "Output",
+      "width": 8,
+      "value": 0,
+      "position": [
+        870.0,
+        20.0
+      ]
+    }
+  ],
+  "wires": [
+    {
+      "from": {
+        "node": 4,
+        "pin": 0
+      },
+      "to": {
+        "node": 3,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 1,
+        "pin": 0
+      },
+      "to": {
+        "node": 3,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 3,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 0
+      }
+    },
+    {
+      "from": {
+        "node": 2,
+        "pin": 0
+      },
+      "to": {
+        "node": 4,
+        "pin": 1
+      }
+    },
+    {
+      "from": {
+        "node": 4,
+        "pin": 0
+      },
+      "to": {
+        "node": 5,
+        "pin": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[package]
+name = "circuit-lab"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "An educational digital circuit editor and simulator"
+license = "MIT"
+
+[features]
+default = ["gui"]
+gui = ["dep:eframe", "dep:rfd"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+eframe = { version = "=0.33.3", optional = true, default-features = false, features = ["default_fonts", "glow", "x11", "wayland"] }
+rfd = { version = "0.15", optional = true }
+
+[[bin]]
+name = "circuit-lab"
+path = "src/main.rs"
+required-features = ["gui"]
+
+[[bin]]
+name = "circuit-check"
+path = "src/bin/check.rs"
+
+[profile.release]
+strip = true
+
